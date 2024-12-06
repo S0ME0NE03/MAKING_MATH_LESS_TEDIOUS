@@ -81,7 +81,7 @@ primes = prime_scive(PRIME_TO_CALC)
 #print(prime_factor(10, primes))
 #print(primes)
 while 1:
-   inp = input("What would you like to do?(prime factor(int) or EXIT\n")
+   inp = input("What would you like to do?(factor, unfactor, or EXIT\n")
    if inp == "EXIT":
         break
    elif inp == "factor":
