@@ -1,0 +1,105 @@
+PRIME_TO_CALC = 99999999999999999999999999999999999
+import time
+def prime_scive(to_go_to: int) -> list[int]:
+    primes = [1,2,3,5]
+    start_time = time.time()
+    countdown = [1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0]
+    for i in range (6, to_go_to):
+        j = 0
+        if i % 2 == 1:
+            if i % 3 != 0:
+                if i % 5 != 0:
+                    for n in range(len(primes)):
+                        if i % primes[n] == 0:
+                            j+=1
+                    if j == 1:
+                        primes.append(i)
+                    end_time = time.time()
+                    elapsed_time = end_time - start_time
+                    if elapsed_time > 15:
+                        a = i
+                        break
+
+
+    print(primes[-1])
+    print(a)
+    return primes 
+
+
+def prime_factor(number, primes):
+    output = []
+    while not(number in primes) or (number < (primes[-1]**2) and number > primes[-1]):
+        for i in range(len(primes)):
+            if number % primes[i] == 0:
+                if not(primes[i] == 1):
+                    output.append(primes[i])
+                    number = number/primes[i]
+    if number != 1:
+        output.append(int(number))
+    return output
+
+def unfactor(strlist):
+    temp = []
+    a = ""
+    output = 1
+    not_last = False 
+    for i in strlist:
+        if i == "," or i == " ":  
+            if not_last == False:
+                temp.append(int(a))
+                #print(a)
+                not_last = True
+                a = ""
+        else:
+            a += i
+            #print(a)
+            not_last = False
+    if a:  
+        temp.append(int(a))
+    #print(temp)
+    for i in range(len(temp)):
+        output *= temp[i]  
+    return output
+      
+         
+
+print("Booting...\n\n\n")
+print("__________________")
+print("\                 \ ")
+print("|\                 \ ")
+print("| \                 \ ")
+print("|  \                 \ ")
+print("|   |-----------------|")
+print("|   |                 | ")
+print("|   |      prime      | ")
+print("\   |                 |")
+print(" \  |    factorizer   |")
+print("  \ |       :)        |")
+print("   \|                 |")
+print("    |-----------------|")
+primes = prime_scive(PRIME_TO_CALC)
+#print(prime_factor(10, primes))
+#print(primes)
+while 1:
+   inp = input("What would you like to do?(prime factor(int) or EXIT\n")
+   if inp == "EXIT":
+        break
+   elif inp == "factor":
+        
+      inp = input("Input a int\n") 
+      try:
+         inp = int(inp)
+      except:
+         print("invalid imput.\n")
+      if type(inp) == int and inp < primes[-1]**2:
+         print(prime_factor(inp, primes))
+      else:
+           print("Number too high please enter a vaiue below " + str(primes[-1]**2))
+   elif inp == 'unfactor':
+      inp = input("Input a list of factors seperated by a space \n") 
+      print(unfactor(inp))
+   else:
+      print("Please enter a valid command.\n")
+
+
+   
