@@ -20,9 +20,9 @@ def prime_scive(to_go_to: int) -> list[int]:
                         a = i
                         break
 
-
+    print("Calculated primes up to: ")
     print(primes[-1])
-    print(a)
+    print(" ")
     return primes 
 
 
@@ -38,7 +38,7 @@ def prime_factor(number, primes):
         output.append(int(number))
     return output
 
-def unfactor(strlist):
+def unfactor(strlist: str) -> int:
     temp = []
     a = ""
     output = 1
@@ -46,24 +46,35 @@ def unfactor(strlist):
     for i in strlist:
         if i == "," or i == " ":  
             if not_last == False:
-                temp.append(int(a))
-                #print(a)
+                try:
+                   temp.append(int(a))
+                except:
+                    print("not a number")
+                    return ""
                 not_last = True
                 a = ""
         else:
             a += i
             #print(a)
             not_last = False
-    if a:  
-        temp.append(int(a))
+    if a:
+       try:
+           temp.append(int(a))
+       except:
+           print("not a number")
+           return ""
     #print(temp)
     for i in range(len(temp)):
         output *= temp[i]  
     return output
       
          
-
-print("Booting...\n\n\n")
+def is_this_prime(primes,  number):
+   if number in primes:
+      return True
+   else:
+      return False
+print("Booting...\nCalculating Pimes\n\n")
 print("__________________")
 print("\                 \ ")
 print("|\                 \ ")
@@ -76,12 +87,12 @@ print("\   |                 |")
 print(" \  |    factorizer   |")
 print("  \ |       :)        |")
 print("   \|                 |")
-print("    |-----------------|")
+print("    |-----------------|\n")
 primes = prime_scive(PRIME_TO_CALC)
 #print(prime_factor(10, primes))
 #print(primes)
 while 1:
-   inp = input("What would you like to do?(factor, unfactor, or EXIT\n")
+   inp = input("What would you like to do?(prime factor, unfactor, check if prime, or EXIT)\n")
    if inp == "EXIT":
         break
    elif inp == "factor":
@@ -98,6 +109,11 @@ while 1:
    elif inp == 'unfactor':
       inp = input("Input a list of factors seperated by a space \n") 
       print(unfactor(inp))
+   elif inp == "check if prime":
+      if is_this_prime(primes, input("input a nuber to check:\n")):
+         print("yes it is prime")
+      else:
+         print("no it is not a prime")
    else:
       print("Please enter a valid command.\n")
 
