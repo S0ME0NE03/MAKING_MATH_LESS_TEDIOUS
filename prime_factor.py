@@ -95,7 +95,7 @@ while 1:
    inp = input("What would you like to do?(prime factor, unfactor, check if prime, or EXIT)\n")
    if inp == "EXIT":
         break
-   elif inp == "factor" or inp == "prime factor:
+   elif inp == "factor" or inp == "prime factor":
         
       inp = input("Input a int\n") 
       try:
