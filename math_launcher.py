@@ -1,3 +1,4 @@
+#golden_ratio_calc.py
 while 1:
   ip = input("what do you want to run(prime factor, childern in basement calclulator)')
   if ip == "prime factor":
@@ -10,6 +11,11 @@ while 1:
       exec(open("children_in_basement_calc.py").read())
     except:
       print("children_in_basement_calc.py is not downloaded or not in the curent folder, please download the progam at: \nhttps://github.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/blob/main/children_in_basement_calc.py\n')
+  elif ip == "golden ratio calclulator":
+    try:
+      exec(open("golden_ratio_calc.py").read())
+    except:
+      print("golden_ratio_calc.py is not downloaded or not in the curent folder, please download the progam at: \nhttps://github.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/blob/main/golden_ratio_calc.py\n')
   else:
     print('not a avalible program')
   
