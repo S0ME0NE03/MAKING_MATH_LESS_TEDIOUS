@@ -1,6 +1,6 @@
 #golden_ratio_calc.py
 while 1:
-  ip = input("what do you want to run(prime factor, childern in basement calclulator)\n")
+  ip = input("what do you want to run(prime factor, childern in basement calclulator, golden ratio calclulator)\n")
   if ip == "prime factor":
       try:
         exec(open("prime_factor.py").read())
