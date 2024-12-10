@@ -1,4 +1,4 @@
-MAX = input("what is the max you want to go to"
+MAX = input("what is the max you want to go to")
 dic = {1:0,2:1}
 #print(dic[1])
 print(dic[2])
@@ -16,3 +16,10 @@ try:
         
 except:
     pass
+while 1
+    try:
+        
+        number_to_output = int(input("what number of the fibinachi sequice do you want to see?(enter for exit)\n"))
+        print(dic[number_to_output])
+    except:
+        break
