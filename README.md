@@ -1,4 +1,5 @@
-# MAKEING_MATH_LESS_TEDIUS
+# MAKING_MATH_LESS_TEDIOUS
+
 this is as the name suggests 
 
 # ♣♠ Card suits ♦♥
