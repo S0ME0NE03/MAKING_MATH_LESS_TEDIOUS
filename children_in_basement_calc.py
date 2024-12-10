@@ -20,7 +20,7 @@ print("|   |      in         | ")
 print("\   |    basement     |")
 print(" \  |   calculator    |")
 print("  \ |       :)        |")
-print("   \|                 |")a
+print("   \|                 |")
 print("    |-----------------|")
 
 print("")
