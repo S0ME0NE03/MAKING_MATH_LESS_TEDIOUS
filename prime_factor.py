@@ -1,10 +1,27 @@
-PRIME_TO_CALC = 99999999999999999999999999999999999
+PRIME_TO_CALC = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 import time
+
 def prime_scive(to_go_to: int) -> list[int]:
-    primes = [1,2,3,5]
+    primes = []
+    try:
+        f = open("primes.txt", "r")
+        try:
+            for x in f:
+                primes.append(int(x))
+        except:
+            pass
+        f.close()
+
+    except:
+        f = open("primes.txt", "a")
+        f.write("1\n2\n3\n5\n")
+        f.close()
+        primes = [1,2,3,5]
+
+    f = open("primes.txt", "a")
     start_time = time.time()
     countdown = [1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0]
-    for i in range (6, to_go_to):
+    for i in range (primes[-1]+1, to_go_to):
         j = 0
         if i % 2 == 1:
             if i % 3 != 0:
@@ -14,12 +31,13 @@ def prime_scive(to_go_to: int) -> list[int]:
                             j+=1
                     if j == 1:
                         primes.append(i)
+                        f.write(str(i)+"\n")
                     end_time = time.time()
                     elapsed_time = end_time - start_time
-                    if elapsed_time > 15:
+                    if elapsed_time > 10*60:
                         a = i
                         break
-
+    f.close
     print("Calculated primes up to: ")
     print(primes[-1])
     print(" ")
