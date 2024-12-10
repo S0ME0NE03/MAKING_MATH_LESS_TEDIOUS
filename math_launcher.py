@@ -4,4 +4,4 @@ while 1:
       exec(open("prime_factor.py").read())
 
   elif ip == "childern in basement calclulator":
-    exec(open("prime_factor.py").read())
+    exec(open("children_in_basement_calc.py").read())
