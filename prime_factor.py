@@ -4,6 +4,9 @@ import time
 def prime_scive(to_go_to: int) -> list[int]:
     primes = []
     try:
+        #happens most of the time
+        #this reads the list of prime numbers and puts them into a list
+        #on secont thougt i have no clue how this actualy gets the data 
         f = open("primes.txt", "r")
         try:
             for x in f:
@@ -13,19 +16,23 @@ def prime_scive(to_go_to: int) -> list[int]:
         f.close()
 
     except:
+        #first boot
         f = open("primes.txt", "a")
         f.write("1\n2\n3\n5\n")
         f.close()
         primes = [1,2,3,5]
 
     f = open("primes.txt", "a")
+    #stores time of boot for automatic time based breaking
     start_time = time.time()
     countdown = [1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0]
     for i in range (primes[-1]+1, to_go_to):
         j = 0
+        #inproves performace by 2x
         if i % 2 == 1:
             if i % 3 != 0:
                 if i % 5 != 0:
+                    #priem sive 
                     for n in range(len(primes)):
                         if i % primes[n] == 0:
                             j+=1
