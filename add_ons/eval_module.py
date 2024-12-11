@@ -1,3 +1,4 @@
+#is there a more secure way of doing this
 def main():
     print("Enter \"exit\" to exit")
     while True:
