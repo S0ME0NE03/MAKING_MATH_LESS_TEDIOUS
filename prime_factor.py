@@ -41,7 +41,7 @@ def prime_scive(to_go_to: int) -> list[int]:
                         f.write(str(i)+"\n")
                     end_time = time.time()
                     elapsed_time = end_time - start_time
-                    if elapsed_time > 10*60:
+                    if elapsed_time > 10:
                         a = i
                         break
     f.close
