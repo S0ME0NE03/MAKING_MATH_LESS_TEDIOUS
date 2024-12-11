@@ -1,4 +1,12 @@
 #golden_ratio_calc.py
+
+"""
+###FUTURE PLANS###
+
+use os module to get all files in the soon to be made: "calulator programs folder", and put them into a list. 
+We can then use this list to launch certain calculator opertaion add ons
+"""
+
 while 1:
   ip = input("what do you want to run(prime factor, childern in basement calclulator, golden ratio calclulator)\n")
   if ip == "prime factor":
