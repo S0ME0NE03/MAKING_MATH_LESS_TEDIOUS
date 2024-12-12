@@ -7,7 +7,8 @@ def download(url, filename):
 try:
   from file_manager import FileManager
 except:
-  download(" ", "file_manager.py")
+  download("https://raw.githubusercontent.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/refs/heads/Refactored_Launcher/scripts/file_manager.py", "file_manager.py")
+  from file_manager import FileManager
 class Calculator:
     def __init__(self) -> None:
         self.set_up_system_variables()
