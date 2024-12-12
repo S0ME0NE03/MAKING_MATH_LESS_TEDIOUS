@@ -38,8 +38,7 @@ class Calculator:
         while self.program_running:
             self.command = input("Enter a command: ")
             if self.command in self.add_ons_list:
-                pass
-                # Run main from the targeted file. Ex, self.command.main() or the like
+              exec(open(self.command).read())
             
         else:
             print("Program Quit")
