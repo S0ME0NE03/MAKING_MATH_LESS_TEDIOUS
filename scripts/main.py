@@ -1,5 +1,8 @@
 from file_manager import FileManager
 
+def download(url, filename):
+  urllib.request.urlretrieve(url,filename)
+
 class Calculator:
     def __init__(self) -> None:
         self.set_up_system_variables()
