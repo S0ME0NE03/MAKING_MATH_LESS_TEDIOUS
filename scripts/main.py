@@ -1,9 +1,13 @@
-from file_manager import FileManager
+
 import urllib.request
 
 def download(url, filename):
   urllib.request.urlretrieve(url,filename)
 
+try:
+  from file_manager import FileManager
+except:
+  download(" ", "file_manager.py")
 class Calculator:
     def __init__(self) -> None:
         self.set_up_system_variables()
