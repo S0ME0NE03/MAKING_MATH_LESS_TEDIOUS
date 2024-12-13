@@ -1,6 +1,8 @@
 PRIME_TO_CALC = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 import time
-
+import urllib.request
+def download(url, filename):
+  urllib.request.urlretrieve(url, filename)
 def prime_scive(to_go_to: int) -> list[int]:
     primes = []
     try:
@@ -17,10 +19,20 @@ def prime_scive(to_go_to: int) -> list[int]:
 
     except:
         #first boot
-        f = open("primes.txt", "a")
-        f.write("1\n2\n3\n5\n")
+        first_boot =  true
+        download_preload = input("do you agree to dowload a preload list of primes from:\nhttps://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt (y,n)\n")
+        if download_preload == y:
+            download("https://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt", "primes.txt")
+        else
+            f = open("primes.txt", "a")
+            f.write("1\n2\n3\n5\n")
+            f.close()
+        try:
+            for x in f:
+                primes.append(int(x))
+        except:
+            pass
         f.close()
-        primes = [1,2,3,5]
 
     f = open("primes.txt", "a")
     #stores time of boot for automatic time based breaking
