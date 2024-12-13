@@ -23,7 +23,7 @@ def prime_scive(to_go_to: int) -> list[int]:
         download_preload = input("do you agree to dowload a preload list of primes from:\nhttps://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt (y,n)\n")
         if download_preload == y:
             download("https://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt", "primes.txt")
-        else
+        else:
             f = open("primes.txt", "a")
             f.write("2\n3\n5\n")
             f.close()
