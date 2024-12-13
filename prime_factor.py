@@ -25,7 +25,7 @@ def prime_scive(to_go_to: int) -> list[int]:
             download("https://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt", "primes.txt")
         else
             f = open("primes.txt", "a")
-            f.write("1\n2\n3\n5\n")
+            f.write("2\n3\n5\n")
             f.close()
         try:
             for x in f:
