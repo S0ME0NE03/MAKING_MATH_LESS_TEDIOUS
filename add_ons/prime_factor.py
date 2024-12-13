@@ -20,7 +20,7 @@ def prime_scive(to_go_to: int) -> list[int]:
         f = open("primes.txt", "a")
         f.write("1\n2\n3\n5\n")
         f.close()
-        primes = [1,2,3,5]
+        primes = [2,3,5]
 
     f = open("primes.txt", "a")
     #stores time of boot for automatic time based breaking
@@ -36,7 +36,7 @@ def prime_scive(to_go_to: int) -> list[int]:
                     for n in range(len(primes)):
                         if i % primes[n] == 0:
                             j+=1
-                    if j == 1:
+                    if j == 0:
                         primes.append(i)
                         f.write(str(i)+"\n")
                     end_time = time.time()
