@@ -1,14 +1,10 @@
+import importlib
+import os
+import sys
 
-import urllib.request
+from file_manager import FileManager
+from commands import Commands
 
-def download(url, filename):
-  urllib.request.urlretrieve(url,filename)
-
-try:
-  from file_manager import FileManager
-except:
-  download("https://raw.githubusercontent.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/refs/heads/Refactored_Launcher/scripts/file_manager.py", "file_manager.py")
-  from file_manager import FileManager
 class Calculator:
     def __init__(self) -> None:
         self.set_up_system_variables()
@@ -17,32 +13,42 @@ class Calculator:
         self.main()
     
     def set_up_system_variables(self):
-        self.MAIN_PROGRAM_PATH : str = "../" # Relative path to the scripts folder
+        self.MAIN_PROGRAM_PATH : str = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         self.program_running : bool = True
-        self.command : str = None
 
         self.set_up_add_ons()
 
     def set_up_add_ons(self):
-        self.add_ons_path : str = "../add_ons" # This is relative path
-        if file_manager.folder_exits(self.add_ons_path) == False:
+        self.ADD_ONS_PATH : str = os.path.join(self.MAIN_PROGRAM_PATH, "add_ons")
+
+        if not file_manager.folder_exits(self.ADD_ONS_PATH):
             file_manager.create_folder(folder_name="add_ons", folder_path = self.MAIN_PROGRAM_PATH)
 
-        self.add_ons_list : list[str] = file_manager.fetch_files_in_path(self.add_ons_path)
+        self.add_ons_list : list[str] = file_manager.fetch_files_in_path(self.ADD_ONS_PATH)
+
+        if self.ADD_ONS_PATH not in sys.path:
+            sys.path.append(self.ADD_ONS_PATH)
+
+        self.add_ons_modules = []
+        for filename in os.listdir(self.ADD_ONS_PATH):
+            if filename.endswith('.py'):
+                module_name = filename[:-3]  # Strip the .py extension
+                try:
+                    module = importlib.import_module(module_name)
+                    self.add_ons_modules.append(module)
+
+                except ImportError as e:
+                    print(f"Error importing {module_name}: {e}")
 
     def welcome_message(self):
-
         print("----!Weclome to the Calculator!----")
 
     def main(self) -> None:
         while self.program_running:
-            self.command = input("Enter a command: ")
-            if self.command in self.add_ons_list:
-              exec(open(self.command).read())
-            
-        else:
-            print("Program Quit")
+            command = input("Enter a command: ")
+            commands.execute(command)
 
 if __name__ == "__main__":
     file_manager = FileManager()
+    commands = Commands()
     Calculator()
