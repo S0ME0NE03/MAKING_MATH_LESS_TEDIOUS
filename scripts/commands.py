@@ -1,76 +1,75 @@
+import os
+
 class Commands:
     def __init__(self, calculator):
         self.calculator = calculator
 
-        # !IMPORTANT! ALL OF THE COMMANDS IN THIS CLASS MUST TAKE SELF
-        self.core_commands_dict = {
-            "quit": self.quit_program,
-            "debug": self.debug
-                         }
         #Construct the custom commands name mapping
         self.add_ons_command_dict = {}
         for add_on_name, add_on_module in zip(calculator.add_ons_filename_list, calculator.add_ons_modules): # I have no clue why or what zip() is doing here but it works
             self.add_ons_command_dict.update({add_on_name: add_on_module})
+
+        #Please try an keep these in order
+        self.core_commands_dict = {
+            "quit": self.quit_program,
+            "exit": self.quit_program,
+            "help": self.commands_help,
+            "clear": self.clear,
+            "update": self.update,
+            "download": self.download_from_github,
+            "delete": self.delete_add_on,
+            "log": self.manual_user_log
+        }
         
-    def quit_program(self):
-        print("Exiting the program...")
-        self.calculator.program_running = False
+    def quit_program(self, args):
+        if len(args) > 1:
+            print("To quit the program simply type \"quit\" or \"exit\"")
+            return
+
+        else:
+            print("Exiting the program...")
+            self.calculator.program_running = False
     
-    def debug(self):
-        print(self.core_commands_dict, self.add_ons_command_dict)
-
-
-# class Commands:
-#     def __init__(self):
-#         exit_key_words = []
-
-#         commands_dictionary = {
-#             "quit": self.exit_program
-#         }
-
-#     def execute(self, command: str):
-#         command_parts = command.split() #Used for multi worded commands such as "Download example.txt"
-#         base_command = command_parts[0] #The base command. Using last example, it would be "Download"
-
-#         if command == "quit" or command == "exit" or command == "break":
-#             self.exit_program()
-
-#         elif base_command == "multiply":
-#             self.multiply(command_parts[1:])
-#         else:
-#             print(f"Unknown command: {base_command}")
+    def commands_help(slef, args):
+        if len(args) == 1:
+            #Description for all core commands, and help on how to run add ons
+            print("Command descriptions are to be added")
         
-#         dictionary = {"quit": self.exit_program()}
-#         dictionary.get("quit")
-
-
-#     def multiply(self, args: list[str]):
-#         """Perform a multiplication."""
-#         try:
-#             num1, num2 = map(float, args)
-#             print(f"Result: {num1 * num2}")
-#         except ValueError:
-#             print("Invalid arguments for multiplication. Please provide two numbers.")
-
-#     def exit_program(self):
-#         print("Exiting the program...")
-#         # self.calculator.program_running = False
-
-# class Commands:
-#     def execute(command : str):
-#         pass
-
-
-
-#     def quit_calculator():
-#         quit()
+        else:
+            #In the future, use arg[1] for help on a specific command
+            pass
     
-#     def update():
-#         pass
+    def clear(self, args):
+        if len(args) < 2:
+            print("Clear needs 1 command extension to run. Did you mean \"clear logs\"?")
+            return
 
-#     def download_from_github():
-#         pass
+        if args[1] == "logs":
+            self.calculator.program_logging.clear_logs()
+            print("Logs have been cleared!")
+        
+        elif args[1] == None:
+            #os.system(clear) Im hesitent on this because it may not work on all systems like windows vs linux stuff
+            pass
 
-#     def delete_add_on():
-#         pass
+        else:
+            print(f"\"{args[1]}\" is an unrecognized argument for clear")
+            return
+    
+    def update(self, args):
+        pass
 
+    def download_from_github(self, args):
+        pass
+
+    def delete_add_on(self, args):
+        pass
+
+    def manual_user_log(self, args):
+        if len(args) > 1:
+            print("Log does not need any command extentions/arguments")
+            return
+        else:
+            text = str(input("What would you like to log?: "))
+            self.calculator.program_logging.multi_purpose_log(text)
+            print("Log successfully saved!")
