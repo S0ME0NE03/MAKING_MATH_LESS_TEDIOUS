@@ -8,13 +8,14 @@ class FileManager:
                 if os.path.isfile(os.path.join(path, file)):
                     files.append(file)
             return files
+        
         except Exception as error:
             print("Something went wrong!: " + str(error))
     
     def folder_exits(self, folder_path : str) -> bool:
         return os.path.isdir(folder_path)
     
-    def create_file(self, file_name : str, file_path : str):
+    def create_file(self, file_name : str, file_path : str) -> None:
         try:
             created_file = open(f"{file_path}/{file_name}", "x")
             created_file.close()
