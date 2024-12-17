@@ -1,16 +1,11 @@
 import os
 
 class FileManager:
-    def fetch_files_in_path(self, path: str) -> list[str]:
-        try:
-            files : list[str] = []
-            for file in os.listdir(path):
-                if os.path.isfile(os.path.join(path, file)):
-                    files.append(file)
-            return files
-        
-        except Exception as error:
-            print("Something went wrong!: " + str(error))
+    def __init__(self, calculator):
+        self.calculator = calculator
+
+    def file_exists(self, file_path: str) -> bool:
+        return os.path.isfile(file_path)
     
     def folder_exits(self, folder_path : str) -> bool:
         return os.path.isdir(folder_path)
@@ -19,9 +14,12 @@ class FileManager:
         try:
             created_file = open(f"{file_path}/{file_name}", "x")
             created_file.close()
+
+            self.calculator.program_logging.file_created_log(file_name, file_path)
         except Exception as error:
             print("Something went wrong! " + str(error))
-    
+            self.calculator.program_logging.error_log(str(error))
+
     def create_folder(self, folder_name: str, folder_path: str) -> None:
         try:
             if not os.path.isdir(folder_path):
@@ -34,8 +32,23 @@ class FileManager:
                 return
 
             os.mkdir(full_path)
+            self.calculator.program_logging.folder_created_log(folder_name, folder_name)
 
         except FileNotFoundError as fnfe:
             print(f"Error: {fnfe}")
+            self.calculator.program_logging.error_log(str(error))
         except Exception as error:
             print(f"Something went wrong: {error}")
+            self.calculator.program_logging.error_log(str(error))
+
+    def fetch_files_in_path(self, path: str) -> list[str]:
+        try:
+            files : list[str] = []
+            for file in os.listdir(path):
+                if os.path.isfile(os.path.join(path, file)):
+                    files.append(file)
+            return files
+        
+        except Exception as error:
+            print("Something went wrong!: " + str(error))
+            self.calculator.program_logging.error_log(str(error))
