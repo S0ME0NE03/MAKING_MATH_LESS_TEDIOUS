@@ -1,4 +1,5 @@
-
+!IMPORTANT!
+  -All add_ons modules NEED to have a main() function which is where the start of the code begins.
 
 
 
