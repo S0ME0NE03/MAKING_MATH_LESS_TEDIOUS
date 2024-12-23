@@ -16,6 +16,7 @@ class FileManager:
             created_file.close()
 
             self.calculator.program_logging.file_created_log(file_name, file_path)
+            
         except Exception as error:
             print("Something went wrong! " + str(error))
             self.calculator.program_logging.error_log(str(error))
@@ -32,11 +33,12 @@ class FileManager:
                 return
 
             os.mkdir(full_path)
-            self.calculator.program_logging.folder_created_log(folder_name, folder_name)
+            self.calculator.program_logging.folder_created_log(folder_name, folder_path)
 
         except FileNotFoundError as fnfe:
             print(f"Error: {fnfe}")
-            self.calculator.program_logging.error_log(str(error))
+            self.calculator.program_logging.error_log(str(fnfe))
+            
         except Exception as error:
             print(f"Something went wrong: {error}")
             self.calculator.program_logging.error_log(str(error))
