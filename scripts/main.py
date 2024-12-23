@@ -21,6 +21,8 @@ class Calculator:
     
     def set_up_system_variables(self):
         self.MAIN_PROGRAM_PATH : str = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        self.GITHUB_ADD_ONS_URL : str = "https://github.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/tree/Making_Math_Less_Tedious-COMPLETE-version-1.0.0.0/add_ons"
+        self.GITHUB_ADD_ONS_URL_RAW : str = "https://raw.githubusercontent.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/refs/heads/main/add_ons"
         self.program_running : bool = True
         self.command = None
 
@@ -54,25 +56,8 @@ class Calculator:
     
     def take_command(self) -> None:
         self.command = input("\nEnter a command: ")
+        self.commands.handle_command(self.command)
 
-        command_parts = self.command.split() #Used for multi worded commands such as "Download example.txt"
-        if len(command_parts) > 2:
-            print("The command may only be 2 key words long")
-            return
-                            
-        else:
-            base_command = command_parts[0] #The base command. Using last example, it would be "Download"
-
-            if base_command in self.commands.core_commands_dict:
-                #This is some extremely funky syntax, but it just calls the function of the command
-                self.commands.core_commands_dict[base_command](command_parts)
-            
-            elif base_command in self.commands.add_ons_command_dict:
-                self.commands.add_ons_command_dict[self.command].main()
-            
-            else:
-                print(f"-!The command \"{base_command}\" is not recognized!-")
-                
 if __name__ == "__main__":
     calculator = Calculator()
 
