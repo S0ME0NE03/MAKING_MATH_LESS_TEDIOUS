@@ -52,14 +52,6 @@ class Commands:
     def command_extension_invalid(self, command_parts):
         print(f"\"{command_parts[1]}\" is an unrecognized extension for {command_parts[0]}")
 
-    def command_has_extension_with_error_msg(self, command_parts) -> bool:
-        if self.command_has_extension(command_parts):
-            print(f"{command_parts[0]} has an extension when one is not needed")
-            return True
-        else:
-            print(f"{command_parts[0]} needs 1 command extension to run")
-            return False
-    
     def command_has_extension(self, command_parts) -> bool:
         if len(command_parts) > 1:
             return True
@@ -87,14 +79,21 @@ class Commands:
 
     def quit_program(self, command_parts):
         if self.command_has_extension(command_parts):
-            print("Command does not require an extension")
+            print(f"\"{command_parts[0]}\" has an extension when one is not needed")
             return
 
         print("Exiting the program...")
         self.calculator.program_running = False
     
     def commands_help(self, command_parts):
-        if len(command_parts) == 1:
+        if self.command_has_extension(command_parts):
+            description = self.command_descriptions.get(command_parts[1])
+            if description == None:
+                self.command_extension_invalid(command_parts)
+            else:
+                print(description)
+        
+        else:
             #Description for all core commands, and help on how to run add ons
             print("\n--Heres a list of all commands--")
             for command, description in self.command_descriptions.items():
@@ -105,16 +104,10 @@ class Commands:
                 print(f"-{add_on_name}")         
 
             print("-!To run add ons, you must enter the name of the add on as a command!-")
-
-        elif len(command_parts) == 2:
-            description = self.command_descriptions.get(command_parts[1])
-            if description == None:
-                self.command_extension_invalid(command_parts)
-            else:
-                print(description)
         
     def clear(self, command_parts):
-        if not self.command_has_extension_with_error_msg(command_parts):
+        if not self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} requires an extension to run")
             return
         
         extension = command_parts[1]
@@ -144,7 +137,8 @@ class Commands:
         # Use requests.get for this
 
     def download_from_github(self, command_parts):
-        if not self.command_has_extension_with_error_msg(command_parts):
+        if not self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} requires an extension to run")
             return
         
         add_on_name = command_parts[1]
@@ -183,7 +177,8 @@ class Commands:
         pass
 
     def manual_user_log(self, command_parts):
-        if self.command_has_extension_with_error_msg(command_parts):
+        if self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} does not require an extension to run")
             return
         
         else:
@@ -192,7 +187,7 @@ class Commands:
             print("Log successfully saved!")
     
     def display_add_ons(self, command_parts):
-        if self.command_has_extension:
+        if self.command_has_extension(command_parts):
             print("Command does not require an extension")
             return
         
@@ -205,7 +200,8 @@ class Commands:
                 print(f"-{add_on}")
         
     def view(self, command_parts):
-        if not self.command_has_extension_with_error_msg(command_parts):
+        if not self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} requires an extension to run")
             return
 
         command_extention = command_parts[1]
