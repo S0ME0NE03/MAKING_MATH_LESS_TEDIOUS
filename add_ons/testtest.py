@@ -1,1 +1,2 @@
-print("JFLKJFKLSJD")
+def main():
+  print("JFLKJFKLSJD")
