@@ -6,4 +6,7 @@ THIS IS A CHECKLIST THAT YOU MUST FOLLOW BEFORE UPLOADING ANYTHING HERE
 2. All files should contain a function called "main"
 
 
+SOMETHING TO NOTE
+If you manually delete an add_on, and the add_on is still in the pycache folder, then if you make changes on the github website to the file and try to download again, changes will not be made,
+it will just load the pycache thing instead of actually donwloading it anew. This means that if we make a delete and update function, that we will have to either delete the enitire pycache folder, or just the cache file
 
