@@ -41,25 +41,26 @@ class Calculator:
         if self.ADD_ONS_PATH not in sys.path:
             sys.path.append(self.ADD_ONS_PATH)
 
-        for filename in os.listdir(self.ADD_ONS_PATH):
-            if filename.endswith('.py'):
-                module_name = filename[:-3]  # Strip the .py extension
-                try:
-                    module = importlib.import_module(module_name)
-                    if hasattr(module, 'main'):
-                        self.append_to_add_on_modules_list(module)
-                        self.append_to_add_on_file_name_list(module_name)
-                    else:
-                        self.program_logging.error_log(f"Module \"{module_name}\" does not have a \"main\" function so it cannot be run by the launcher")
-                except ImportError as e:
-                    print(f"Error importing {module_name}: {e}")
+        for file_name in os.listdir(self.ADD_ONS_PATH):
+            self.update_add_ons_modules_if_req_met(file_name)
     
-    def append_to_add_on_file_name_list(self, add_on_name: str) -> None:
-        self.add_ons_filename_list.append(add_on_name)
-    
-    def append_to_add_on_modules_list(self, add_on_module) -> None:
-        self.add_ons_modules.append(add_on_module)
-
+    def update_add_ons_modules_if_req_met(self, file_name) -> None:
+        if file_name.endswith('.py'):
+            module_name = file_name[:-3]  # Strip the .py extension
+            try:
+                module = importlib.import_module(module_name)
+                if hasattr(module, 'main'):
+                    self.add_ons_modules.append(module)
+                    self.add_ons_filename_list.append(module_name)
+                else:
+                    self.program_logging.error_log(f"Module \"{module_name}\" does not have a \"main\" function so it cannot be run by the launcher")
+            except ImportError as e:
+                self.program_logging.error_log(f"Error importing {module_name}: {e}")
+        else:
+            if file_name == "__pycache__":
+                return
+            else:
+                self.program_logging.error_log(f"File \"{file_name}\" is not a python file so it cannot be imported")
 
     def welcome_message(self):
         print("----!Weclome to the Calculator!----")
