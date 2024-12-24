@@ -1,5 +1,6 @@
 !IMPORTANT!
   -All add_ons modules NEED to have a main() function which is where the start of the code begins.
+  -ALL files in the add_ons folder (stored in server) MUST have a .py extension
 
 
 
