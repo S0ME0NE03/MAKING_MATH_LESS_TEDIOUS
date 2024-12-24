@@ -23,6 +23,10 @@ class Calculator:
         self.MAIN_PROGRAM_PATH : str = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         self.GITHUB_ADD_ONS_URL : str = "https://github.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/tree/Making_Math_Less_Tedious-COMPLETE-version-1.0.0.0/add_ons"
         self.GITHUB_ADD_ONS_URL_RAW : str = "https://raw.githubusercontent.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/refs/heads/main/add_ons"
+        self.repo_owner = "S0ME0NE03"  # Replace with the repository owner
+        self.repo_name = "MAKING_MATH_LESS_TEDIOUS"  # Replace with your repository name
+        self.api_url = f"https://api.github.com/repos/{self.repo_owner}/{self.repo_name}/contents/add_ons"
+
         self.program_running : bool = True
         self.command = None
 
@@ -43,12 +47,19 @@ class Calculator:
                 try:
                     module = importlib.import_module(module_name)
                     if hasattr(module, 'main'):
-                        self.add_ons_modules.append(module)
-                        self.add_ons_filename_list.append(module_name)
+                        self.append_to_add_on_modules_list(module)
+                        self.append_to_add_on_file_name_list(module_name)
                     else:
                         self.program_logging.error_log(f"Module \"{module_name}\" does not have a \"main\" function so it cannot be run by the launcher")
                 except ImportError as e:
                     print(f"Error importing {module_name}: {e}")
+    
+    def append_to_add_on_file_name_list(self, add_on_name: str) -> None:
+        self.add_ons_filename_list.append(add_on_name)
+    
+    def append_to_add_on_modules_list(self, add_on_module) -> None:
+        self.add_ons_modules.append(add_on_module)
+
 
     def welcome_message(self):
         print("----!Weclome to the Calculator!----")
