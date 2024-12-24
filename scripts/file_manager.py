@@ -11,6 +11,7 @@ class FileManager:
         return os.path.isdir(folder_path)
     
     def create_file(self, file_name : str, file_path : str) -> None:
+        #Maybe refactor this so you can have more control like if "x", "w", or "wb"  or whatever
         try:
             created_file = open(f"{file_path}/{file_name}", "x")
             created_file.close()
