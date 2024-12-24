@@ -11,3 +11,5 @@ If you manually delete an add_on, and the add_on is still in the pycache folder,
 it will just load the pycache thing instead of actually donwloading it anew. This means that if we make a delete and update function, that we will have to either delete the enitire pycache folder, or just the cache file
 
 Just did further testing and maybe this isint true, I think it just takes a long time for the actual website to update its backend
+
+test
