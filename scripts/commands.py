@@ -22,7 +22,8 @@ class Commands:
             "delete": self.delete_add_on,
             "log": self.manual_user_log,
             "add_ons": self.display_add_ons,
-            "view": self.view
+            "view": self.view,
+            "debug": self.debug
         }
 
         self.command_descriptions = {
@@ -38,12 +39,19 @@ class Commands:
             "view": "Lets you view things. (Extensions: logs, add_ons, server_add_ons)"
         }
     
-    def send_http_request_to_github_add_ons_folder(self) -> list[dict]:
+    def get_python_files_from_github_add_ons_server(self) -> list[dict]:
         "Return a list of json as dictionaries withing in add_ons server folder"
         response = requests.get(self.calculator.api_url)
         response.raise_for_status()
 
-        return response.json()
+        file_in_server_add_ons_folder : list[dict] = response.json()
+
+        python_files : list[dict] = []
+        for file in file_in_server_add_ons_folder:
+            if file["name"].endswith(".py"):
+                python_files.append(file)
+
+        return python_files
         
     def update_add_ons_command_dict_if_req(self, add_on_name, add_on_module):
         if add_on_name in self.calculator.add_ons_filename_list:
@@ -148,19 +156,18 @@ class Commands:
             return
         
         try:
-            files : list[dict] = self.send_http_request_to_github_add_ons_folder()
+            files : list[dict] = self.get_python_files_from_github_add_ons_server()
 
             for file in files:
                 if add_on_name == file["name"][:-3]:
-                    add_on_in_correct_dir = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name + ".py")
                     file_content = requests.get(file["download_url"]).content
 
+                    add_on_in_correct_dir = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name + ".py")
                     with open(add_on_in_correct_dir, "wb") as writer:
                         writer.write(file_content)
+                        self.calculator.program_logging.file_created_log(add_on_name, self.calculator.ADD_ONS_PATH)
 
-                    self.calculator.program_logging.file_created_log(add_on_name, self.calculator.ADD_ONS_PATH)
-
-                    self.calculator.update_add_ons_modules_if_req_met(add_on_name)
+                    self.calculator.update_add_ons_modules_if_req_met(add_on_name + ".py")
                     self.update_add_ons_command_dict_if_req(add_on_name, self.calculator.add_ons_modules[-1])
 
                     print(f"Add on \"{add_on_name}\" successfully downloaded!")
@@ -220,7 +227,7 @@ class Commands:
                     print(f"-{add_on}")
         
         elif command_extention == "server_add_ons":
-            files : list[dict] = self.send_http_request_to_github_add_ons_folder()
+            files : list[dict] = self.get_python_files_from_github_add_ons_server()
 
             print("\nHeres a list of available add ons:")
             for file in files:
@@ -229,3 +236,10 @@ class Commands:
         else:
             self.command_extension_invalid(command_parts)
             return
+
+    def debug(self, command_parts):
+        if not self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} requires an extension to run")
+            return
+        
+        eval(command_parts[1])
