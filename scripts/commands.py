@@ -1,6 +1,8 @@
 import os
 import requests
 
+#Some problems with the updateing function
+
 class Commands:
     def __init__(self, calculator):
         self.calculator = calculator
@@ -31,7 +33,7 @@ class Commands:
             "exit": "Exits the program",
             "help": "Displays a list of commands. (Extensions: command_name)",
             "clear": "Clears the specified extension. (Extensions: logs)",
-            "update": "Updates the extension. (extensions: to be implemented prolly module names)",
+            "update": "Updates the extension. (Extensions: add_on_name)",
             "download": "Downloads a new add on from github. (Extensions: add_on_name)",
             "delete": "Deletes an add on (Extensions: add_on_name)",
             "log": "Manually logs a message",
@@ -139,10 +141,43 @@ class Commands:
             return
     
     def update(self, command_parts):
-        pass
+        if not self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} requires an extension to run")
+            return
+        
+        add_on_name = command_parts[1]
+
+        try:
+            files = self.get_python_files_from_github_add_ons_server()
+
+            for file in files:
+                if add_on_name == file["name"][:-3]:
+                    file_content = requests.get(file["download_url"]).content
+                    self.calculator.file_manager.update_file(self.calculator.ADD_ONS_PATH, f"{add_on_name}.py", file_content, "wb")
+
+                    #Remove old module
+                    self.calculator.add_ons_filename_list.remove(add_on_name)
+                    self.calculator.add_ons_modules.remove(self.add_ons_command_dict[add_on_name])
+
+                    #Import and add new one
+                    self.calculator.update_add_ons_modules_if_req_met(add_on_name + ".py")
+                    self.update_add_ons_command_dict_if_req(add_on_name, self.calculator.add_ons_modules[-1])
+                    print(f"Add on \"{add_on_name}\" successfully updated!")
+                    return
+            
+            else:
+                print(f"Add on \"{add_on_name}\" does not exist on the server")
+
+        except Exception as error:  
+            print(f"An error occured while trying to update: {error}")
+            self.calculator.program_logging.error_log(str(error))
+
         # Go on the github page and redownload the desired file
         # Shold be quite simple because I can use filemanager to delete file and create
         # Use requests.get for this
+
+        #Add an option to update the actual program itself, 
+        #like calculator file_manager and whatever
 
     def download_from_github(self, command_parts):
         if not self.command_has_extension(command_parts):
@@ -152,7 +187,12 @@ class Commands:
         add_on_name = command_parts[1]
         
         if add_on_name in self.calculator.add_ons_filename_list:
-            print(f"Add on \"{add_on_name}\" is already installed!")
+            print(f"Add on \"{add_on_name}\" is already installed")
+            confrim = input("Would you like to update it? (y/n): ")
+            if confrim == "y":
+                self.update(command_parts)
+            else:
+                pass
             return
         
         try:
@@ -203,6 +243,7 @@ class Commands:
             return
             
         else:
+            print("Heres a list of currently installed add ons:")
             for add_on in self.calculator.add_ons_filename_list:
                 print(f"-{add_on}")
         
@@ -218,6 +259,7 @@ class Commands:
                 print(reader.read())
         
         elif command_extention == "add_ons":
+            print("Heres a list of currently installed add ons:")
             if len(self.calculator.add_ons_filename_list) == 0:
                 print("There are no add ons currently installed")
                 return
@@ -242,4 +284,8 @@ class Commands:
             print(f"{command_parts[0]} requires an extension to run")
             return
         
-        eval(command_parts[1])
+        try:
+            eval(command_parts[1])
+        except Exception as error:
+            print(f"An error occured while trying to debug: {error}")
+            self.calculator.program_logging.error_log(str(error))

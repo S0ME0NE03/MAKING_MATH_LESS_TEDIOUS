@@ -21,6 +21,15 @@ class FileManager:
         except Exception as error:
             print("Something went wrong! " + str(error))
             self.calculator.program_logging.error_log(str(error))
+    
+    def update_file(self, file_path : str, file_name : str, content : str, mode : str) -> None:
+        try:
+            with open(f"{file_path}/{file_name}", mode) as writer:
+                writer.write(content)
+            
+        except Exception as error:
+            print("Something went wrong! " + str(error))
+            self.calculator.program_logging.error_log(str(error))
 
     def create_folder(self, folder_name: str, folder_path: str) -> None:
         try:
