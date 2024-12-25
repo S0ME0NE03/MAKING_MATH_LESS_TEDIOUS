@@ -72,6 +72,5 @@ class Calculator:
 
 if __name__ == "__main__":
     calculator = Calculator()
-
     while calculator.program_running:
         calculator.take_command()

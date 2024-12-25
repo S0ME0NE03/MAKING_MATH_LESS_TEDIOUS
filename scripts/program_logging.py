@@ -41,11 +41,15 @@ class logging:
     def file_created_log(self, file, path):
         content_format = f"{self.get_time()}: !FILE CREATED!: -> New file \"{file}\" created at {path}"
         self.append_to_file(content_format)
+    
+    def file_updatedlog(self, file, path):
+        content_format = f"{self.get_time()}: !FILE UPDATED!: -> File \"{file}\" updated at {path}"
+        self.append_to_file(content_format)
         
     def folder_created_log(self, folder, path):
         content_format = f"{self.get_time()}: !FOLDER CREATED!: -> New file \"{folder}\" created at {path}"
         self.append_to_file(content_format)
-
+    
     def error_log(self, error: str):
         content_format = f"{self.get_time()}: !ERROR!: -> {str(error)}"
         self.append_to_file(content_format)

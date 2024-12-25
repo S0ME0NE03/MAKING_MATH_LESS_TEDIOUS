@@ -1,5 +1,6 @@
 import os
 import requests
+import importlib
 
 #Some problems with the updateing function
 
@@ -21,7 +22,7 @@ class Commands:
             "clear": self.clear,
             "update": self.update,
             "download": self.download_from_github,
-            "delete": self.delete_add_on,
+            "del": self.delete_add_on,
             "log": self.manual_user_log,
             "add_ons": self.display_add_ons,
             "view": self.view,
@@ -35,7 +36,7 @@ class Commands:
             "clear": "Clears the specified extension. (Extensions: logs)",
             "update": "Updates the extension. (Extensions: add_on_name)",
             "download": "Downloads a new add on from github. (Extensions: add_on_name)",
-            "delete": "Deletes an add on (Extensions: add_on_name)",
+            "del": "Deletes an add on (Extensions: add_on_name)",
             "log": "Manually logs a message",
             "add_ons": "Displays all installed add ons",
             "view": "Lets you view things. (Extensions: logs, add_ons, server_add_ons)"
@@ -43,18 +44,23 @@ class Commands:
     
     def get_python_files_from_github_add_ons_server(self) -> list[dict]:
         "Return a list of json as dictionaries withing in add_ons server folder"
-        response = requests.get(self.calculator.api_url)
-        response.raise_for_status()
+        try:
+            response = requests.get(self.calculator.api_url)
+            response.raise_for_status()
 
-        file_in_server_add_ons_folder : list[dict] = response.json()
+            file_in_server_add_ons_folder : list[dict] = response.json()
 
-        python_files : list[dict] = []
-        for file in file_in_server_add_ons_folder:
-            if file["name"].endswith(".py"):
-                python_files.append(file)
+            python_files : list[dict] = []
+            for file in file_in_server_add_ons_folder:
+                if file["name"].endswith(".py"):
+                    python_files.append(file)
 
-        return python_files
-        
+            return python_files
+
+        except Exception as error:
+            print(f"An error occured while trying to get files from the server: {error}")
+            self.calculator.program_logging.error_log(str(error))
+
     def update_add_ons_command_dict_if_req(self, add_on_name, add_on_module):
         if add_on_name in self.calculator.add_ons_filename_list:
             self.add_ons_command_dict.update({add_on_name: add_on_module})
@@ -146,35 +152,31 @@ class Commands:
             return
         
         add_on_name = command_parts[1]
+        if not add_on_name in self.calculator.add_ons_filename_list:
+            print(f"No add on named \"{add_on_name}\" was found in the add_ons folder")
+            return
 
         try:
-            files = self.get_python_files_from_github_add_ons_server()
-
+            files : list[dict] = self.get_python_files_from_github_add_ons_server()
             for file in files:
                 if add_on_name == file["name"][:-3]:
                     file_content = requests.get(file["download_url"]).content
                     self.calculator.file_manager.update_file(self.calculator.ADD_ONS_PATH, f"{add_on_name}.py", file_content, "wb")
 
-                    #Remove old module
-                    self.calculator.add_ons_filename_list.remove(add_on_name)
-                    self.calculator.add_ons_modules.remove(self.add_ons_command_dict[add_on_name])
-
-                    #Import and add new one
-                    self.calculator.update_add_ons_modules_if_req_met(add_on_name + ".py")
-                    self.update_add_ons_command_dict_if_req(add_on_name, self.calculator.add_ons_modules[-1])
+                    for module in self.calculator.add_ons_modules:
+                        if module.__name__ == add_on_name:
+                            importlib.reload(module)
+                            break
+                    
                     print(f"Add on \"{add_on_name}\" successfully updated!")
                     return
             
             else:
                 print(f"Add on \"{add_on_name}\" does not exist on the server")
 
-        except Exception as error:  
-            print(f"An error occured while trying to update: {error}")
+        except Exception as error:
+            print(f"An error occured while trying to update the add on: {error}")
             self.calculator.program_logging.error_log(str(error))
-
-        # Go on the github page and redownload the desired file
-        # Shold be quite simple because I can use filemanager to delete file and create
-        # Use requests.get for this
 
         #Add an option to update the actual program itself, 
         #like calculator file_manager and whatever
@@ -185,10 +187,9 @@ class Commands:
             return
         
         add_on_name = command_parts[1]
-        
         if add_on_name in self.calculator.add_ons_filename_list:
             print(f"Add on \"{add_on_name}\" is already installed")
-            confrim = input("Would you like to update it? (y/n): ")
+            confrim = input("\nWould you like to update it? (y/n): ")
             if confrim == "y":
                 self.update(command_parts)
             else:
@@ -197,7 +198,6 @@ class Commands:
         
         try:
             files : list[dict] = self.get_python_files_from_github_add_ons_server()
-
             for file in files:
                 if add_on_name == file["name"][:-3]:
                     file_content = requests.get(file["download_url"]).content
@@ -221,7 +221,26 @@ class Commands:
             self.calculator.program_logging.error_log(str(error))
 
     def delete_add_on(self, command_parts):
-        pass
+        if not self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} requires an extension to run")
+            return
+        
+        add_on_name = command_parts[1]
+        if add_on_name not in self.calculator.add_ons_filename_list:
+            print(f"No add on named \"{add_on_name}\" was found in the add_ons folder")
+            return
+        
+        confirm = input(f"Are you sure you want to delete the add on \"{add_on_name}\"? (y/n): ")
+        if confirm == "y":
+            add_on_path = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name + ".py")
+            os.remove(add_on_path)
+            self.calculator.add_ons_filename_list.remove(add_on_name)
+            self.calculator.add_ons_modules = [module for module in self.calculator.add_ons_modules if module.__name__ != add_on_name]
+            del self.add_ons_command_dict[add_on_name]
+            print(f"Add on \"{add_on_name}\" successfully deleted!")
+        
+        else:
+            return
 
     def manual_user_log(self, command_parts):
         if self.command_has_extension(command_parts):
