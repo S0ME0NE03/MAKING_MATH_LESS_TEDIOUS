@@ -52,7 +52,7 @@ class Commands:
 
             python_files : list[dict] = []
             for file in file_in_server_add_ons_folder:
-                if file["name"].endswith(".py"):
+                if file["name"].endswith(".py") and file["type"] == "file":
                     python_files.append(file)
 
             return python_files
