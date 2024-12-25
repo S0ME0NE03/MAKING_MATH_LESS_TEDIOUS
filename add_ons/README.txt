@@ -8,3 +8,4 @@ THIS IS A CHECKLIST THAT YOU MUST FOLLOW BEFORE UPLOADING ANYTHING HERE
 
 SOMETHING TO NOTE
   -The raw file takes a little bit of time to actually update so yeah keep that in mind
+  -Github api can be a little slow to update stuff
