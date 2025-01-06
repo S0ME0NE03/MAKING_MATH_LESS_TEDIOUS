@@ -112,48 +112,49 @@ def is_this_prime(primes,  number):
       return True
    else:
       return False
-print("Booting...\nCalculating Pimes\n\n")
-print("__________________")
-print("\                 \ ")
-print("|\                 \ ")
-print("| \                 \ ")
-print("|  \                 \ ")
-print("|   |-----------------|")
-print("|   |                 | ")
-print("|   |      prime      | ")
-print("\   |                 |")
-print(" \  |    factorizer   |")
-print("  \ |       :)        |")
-print("   \|                 |")
-print("    |-----------------|\n")
-primes = prime_scive(PRIME_TO_CALC)
-#print(prime_factor(10, primes))
-#print(primes)
-while 1:
-   inp = input("What would you like to do?(prime factor, unfactor, check if prime, or EXIT)\n")
-   if inp == "EXIT":
-        break
-   elif inp == "factor" or inp == "prime factor":
-        
-      inp = input("Input a int\n") 
-      try:
-         inp = int(inp)
-      except:
-         print("invalid imput.\n")
-      if type(inp) == int and inp < primes[-1]**2:
-         print(prime_factor(inp, primes))
-      else:
-           print("Number too high please enter a vaiue below " + str(primes[-1]**2))
-   elif inp == 'unfactor':
-      inp = input("Input a list of factors seperated by a space \n") 
-      print(unfactor(inp))
-   elif inp == "check if prime":
-      if is_this_prime(primes, input("input a nuber to check:\n")):
-         print("yes it is prime")
-      else:
-         print("no it is not a prime")
-   else:
-      print("Please enter a valid command.\n")
+def main():
+  print("Booting...\nCalculating Pimes\n\n")
+  print("__________________")
+  print("\                 \ ")
+  print("|\                 \ ")
+  print("| \                 \ ")
+  print("|  \                 \ ")
+  print("|   |-----------------|")
+  print("|   |                 | ")
+  print("|   |      prime      | ")
+  print("\   |                 |")
+  print(" \  |    factorizer   |")
+  print("  \ |       :)        |")
+  print("   \|                 |")
+  print("    |-----------------|\n")
+  primes = prime_scive(PRIME_TO_CALC)
+  #print(prime_factor(10, primes))
+  #print(primes)
+  while 1:
+     inp = input("What would you like to do?(prime factor, unfactor, check if prime, or EXIT)\n")
+     if inp == "EXIT":
+          break
+     elif inp == "factor" or inp == "prime factor":
+          
+        inp = input("Input a int\n") 
+        try:
+           inp = int(inp)
+        except:
+           print("invalid imput.\n")
+        if type(inp) == int and inp < primes[-1]**2:
+           print(prime_factor(inp, primes))
+        else:
+             print("Number too high please enter a vaiue below " + str(primes[-1]**2))
+     elif inp == 'unfactor':
+        inp = input("Input a list of factors seperated by a space \n") 
+        print(unfactor(inp))
+     elif inp == "check if prime":
+        if is_this_prime(primes, input("input a nuber to check:\n")):
+           print("yes it is prime")
+        else:
+           print("no it is not a prime")
+     else:
+        print("Please enter a valid command.\n")
 
 
    
