@@ -1,6 +1,7 @@
 
-MAX = input("what is the max you want to go to")
 def main():
+    
+    MAX = input("what is the max you want to go to")
     dic = {1:0,2:1}
     #print(dic[1])
     print(dic[2])
