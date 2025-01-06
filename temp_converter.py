@@ -3,7 +3,7 @@
 def ctof(c):
   return(c * 9/5 + 32)
 
-def ftoc(f) 
+def ftoc(f):
   "pay respect"
   return((f-32) * 5/9)
 def ktoc(k):
@@ -29,19 +29,19 @@ def main():
     try:
       if act == "5":
         break
-      elif act == "4"
+      elif act == "4":
   
           print(ktoc(float(input("enter a number"))))
   
-      elif act == "3"
+      elif act == "3":
   
           print(ctok(float(input("enter a number"))))
   
-      elif act == "2"
+      elif act == "2":
   
           print(ftoc(float(input("enter a number"))))
   
-      elif act == "1"
+      elif act == "1":
   
           print(ctof(float(input("enter a number"))))
   
@@ -49,4 +49,3 @@ def main():
         print("not a action")
     except:
       print("error")
-
