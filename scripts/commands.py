@@ -292,7 +292,7 @@ class Commands:
 
             print("\nHeres a list of available add ons:")
             for file in files:
-                print(f"-{file["name"][:-3]}")
+                print(f"-{file['name'][:-3]}")
         
         else:
             self.command_extension_invalid(command_parts)
