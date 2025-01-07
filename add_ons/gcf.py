@@ -1,6 +1,6 @@
 
 def gcf(a,b,c):
-    for i in range(a*C):
+    for i in range(a*c):
       for j in range(b):
         if i*j == a*c and i+j == b:
           return [i,j]
