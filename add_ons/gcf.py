@@ -7,4 +7,4 @@ def gcf(a,b,c):
           break
     return ["no soution"]
 def main():
-  print(gcf(input("enter, a: \n"),input("enter, b:\n"),input("enter, c\n")  
+  print(gcf(input("enter, a: \n"),input("enter, b:\n"),input("enter, c\n"))  
