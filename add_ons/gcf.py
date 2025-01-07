@@ -4,7 +4,6 @@ def gcf(a,b,c):
       for j in range(b):
         if i*j == a*c and i+j == b:
           return [i,j]
-          break
     return ["no soution"]
 def main():
-  print(gcf(input("enter, a: \n"),input("enter, b:\n"),input("enter, c\n")))  
+  print(gcf(int(input("enter, a: \n")),int(input("enter, b:\n")),int(input("enter, c\n"))))  
