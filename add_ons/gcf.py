@@ -6,4 +6,4 @@ def gcf(a,b,c):
           return [i,j]
     return ["no soution"]
 def main():
-  print(gcf(int(input("enter, a: \n")),int(input("enter, b:\n")),int(input("enter, c\n"))))  
+  print(gcf(int(input("enter, a: \n")),int(input("enter, b:\n")),int(input("enter, c\n"))))
