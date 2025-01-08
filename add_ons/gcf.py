@@ -1,5 +1,5 @@
 
-def gcf(a,b,c):
+def gcf(a,b,C):
     for i in range(a*c):
       for j in range(b):
         if i*j == a*c and i+j == b:
