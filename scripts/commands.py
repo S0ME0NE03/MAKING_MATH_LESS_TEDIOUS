@@ -76,12 +76,18 @@ class Commands:
 
     def handle_command(self, command):
         command_parts = command.split() #Used for multi worded commands such as "Download example.txt"
-
-        if len(command_parts) > 2: #Something like this may change later, but I doubt it
+       
+       
+        if len(command_parts) != 0:
+           base_command = command_parts[0] #The base command. Using last example, it would be "Download"
+           if  command_parts[0] == "log":
+            pass
+           elif len(command_parts) > 2: #Something like this may change later, but I doubt it
             print("The command may only be 2 key words long")
             return
+        else:
+           base_command = ' '
         
-        base_command = command_parts[0] #The base command. Using last example, it would be "Download"
 
         if base_command in self.core_commands_dict:
             #This is some extremely funky syntax, but it just calls the function of the command
@@ -244,9 +250,11 @@ class Commands:
 
     def manual_user_log(self, command_parts):
         if self.command_has_extension(command_parts):
-            print(f"{command_parts[0]} does not require an extension to run")
-            return
-        
+           text = "" 
+           for i in range(len(command_parts)-1):
+               text += command_parts[i+1] + " "
+           self.calculator.program_logging.multi_purpose_log(text)
+           print("Log successfully saved!")
         else:
             text = str(input("What would you like to log?: "))
             self.calculator.program_logging.multi_purpose_log(text)
