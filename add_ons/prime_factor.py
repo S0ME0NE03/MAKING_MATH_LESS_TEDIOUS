@@ -25,12 +25,12 @@ def prime_scive(to_go_to: int) -> list[int]:
         first_boot =  True
         download_preload = input("do you agree to dowload a preload list of primes from:\nhttps://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt (y,n)\n")
         if download_preload == "y":
-            download("https://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt", calculator.MAIN_PROGRAM_PATH +"/primes.txt")
+            download("https://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt", "primes.txt")
         else:
-            f = open(calculator.MAIN_PROGRAM_PATH +"primes.txt", "a")
+            f = open("primes.txt", "a")
             f.write("2\n3\n5\n")
             f.close()
-        f = open(calculator.MAIN_PROGRAM_PATH +"primes.txt", "r")
+        f = open("primes.txt", "r")
         try:
             for x in f:
                 primes.append(int(x))
@@ -38,7 +38,7 @@ def prime_scive(to_go_to: int) -> list[int]:
             pass
         f.close()
 
-    f = open(calculator.MAIN_PROGRAM_PATH +"primes.txt", "a")
+    f = open("primes.txt", "a")
     #stores time of boot for automatic time based breaking
     start_time = time.time()
     countdown = [1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0]
