@@ -13,7 +13,7 @@ def prime_scive(to_go_to: int) -> list[int]:
         #happens most of the time
         #this reads the list of prime numbers and puts them into a list
         #on secont thougt i have no clue how this actualy gets the data 
-        f = open("primes.txt", "r")
+        f = open(path + "primes.txt", "r")
         try:
             for x in f:
                 primes.append(int(x))
@@ -26,12 +26,12 @@ def prime_scive(to_go_to: int) -> list[int]:
         first_boot =  True
         download_preload = input("do you agree to dowload a preload list of primes from:\nhttps://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt (y,n)\n")
         if download_preload == "y":
-            download("https://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt", "primes.txt")
+            download("https://raw.githubusercontent.com/srmalins/primelists/refs/heads/master/100primes.txt", path + "primes.txt")
         else:
-            f = open("primes.txt", "a")
+            f = open(path + "primes.txt", "a")
             f.write("2\n3\n5\n")
             f.close()
-        f = open("primes.txt", "r")
+        f = open(path + "primes.txt", "r")
         try:
             for x in f:
                 primes.append(int(x))
