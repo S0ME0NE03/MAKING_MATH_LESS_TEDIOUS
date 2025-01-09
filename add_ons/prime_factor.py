@@ -1,6 +1,8 @@
 PRIME_TO_CALC = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 import time
 import urllib.request
+import os
+print os.path.abspath("prime_factor.py")
 def download(url, filename):
   urllib.request.urlretrieve(url, filename)
 def prime_scive(to_go_to: int) -> list[int]:
