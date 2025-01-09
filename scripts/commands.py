@@ -10,7 +10,7 @@ class Commands:
 
         #Construct the custom commands name mapping
         self.add_ons_command_dict = {}
-        for add_on_name, add_on_module in zip(calculator.add_ons_filename_list, calculator.add_ons_modules): # I have no clue why or what zip() is doing here but it works
+        for add_on_name, add_on_module in zip(calculator.add_ons_foldername_list, calculator.add_ons_modules): # I have no clue why or what zip() is doing here but it works
             self.update_add_ons_command_dict_if_req(add_on_name, add_on_module)
             
         #Please try an keep these in order
@@ -62,7 +62,7 @@ class Commands:
             self.calculator.program_logging.error_log(str(error))
 
     def update_add_ons_command_dict_if_req(self, add_on_name, add_on_module):
-        if add_on_name in self.calculator.add_ons_filename_list:
+        if add_on_name in self.calculator.add_ons_foldername_list:
             self.add_ons_command_dict.update({add_on_name: add_on_module})
 
     def command_extension_invalid(self, command_parts):
@@ -122,7 +122,7 @@ class Commands:
                 print(f"-{command}: {description}")        
 
             print("\n--Heres a list of currently installed add ons--")
-            for add_on_name in self.calculator.add_ons_filename_list:
+            for add_on_name in self.calculator.add_ons_foldername_list:
                 print(f"-{add_on_name}")         
 
             print("-!To run add ons, you must enter the name of the add on as a command!-")
@@ -158,7 +158,7 @@ class Commands:
             return
         
         add_on_name = command_parts[1]
-        if not add_on_name in self.calculator.add_ons_filename_list:
+        if not add_on_name in self.calculator.add_ons_foldername_list:
             print(f"No add on named \"{add_on_name}\" was found in the add_ons folder")
             return
 
@@ -193,7 +193,7 @@ class Commands:
             return
         
         add_on_name = command_parts[1]
-        if add_on_name in self.calculator.add_ons_filename_list:
+        if add_on_name in self.calculator.add_ons_foldername_list:
             print(f"Add on \"{add_on_name}\" is already installed")
             confrim = input("\nWould you like to update it? (y/n): ")
             if confrim == "y":
@@ -232,7 +232,7 @@ class Commands:
             return
         
         add_on_name = command_parts[1]
-        if add_on_name not in self.calculator.add_ons_filename_list:
+        if add_on_name not in self.calculator.add_ons_foldername_list:
             print(f"No add on named \"{add_on_name}\" was found in the add_ons folder")
             return
         
@@ -240,7 +240,7 @@ class Commands:
         if confirm == "y":
             add_on_path = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name + ".py")
             os.remove(add_on_path)
-            self.calculator.add_ons_filename_list.remove(add_on_name)
+            self.calculator.add_ons_foldername_list.remove(add_on_name)
             self.calculator.add_ons_modules = [module for module in self.calculator.add_ons_modules if module.__name__ != add_on_name]
             del self.add_ons_command_dict[add_on_name]
             print(f"Add on \"{add_on_name}\" successfully deleted!")
@@ -265,13 +265,13 @@ class Commands:
             print("Command does not require an extension")
             return
         
-        if len(self.calculator.add_ons_filename_list) == 0:
+        if len(self.calculator.add_ons_foldername_list) == 0:
             print("There are no add ons currently installed")
             return
             
         else:
             print("Heres a list of currently installed add ons:")
-            for add_on in self.calculator.add_ons_filename_list:
+            for add_on in self.calculator.add_ons_foldername_list:
                 print(f"-{add_on}")
         
     def view(self, command_parts):
@@ -287,12 +287,12 @@ class Commands:
         
         elif command_extention == "add_ons":
             print("Heres a list of currently installed add ons:")
-            if len(self.calculator.add_ons_filename_list) == 0:
+            if len(self.calculator.add_ons_foldername_list) == 0:
                 print("There are no add ons currently installed")
                 return
 
             else:
-                for add_on in self.calculator.add_ons_filename_list:
+                for add_on in self.calculator.add_ons_foldername_list:
                     print(f"-{add_on}")
         
         elif command_extention == "server_add_ons":
