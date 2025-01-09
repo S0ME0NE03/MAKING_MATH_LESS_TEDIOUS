@@ -46,7 +46,7 @@ class Calculator:
     
     def update_add_ons_modules_if_req_met(self, folder_name) -> None:
         # if file_name.endswith('.py'):
-        if file_name == "__pycache__":
+        if folder_name == "__pycache__":
             return
 
         module_name = folder_name  # Strip the .py extension
