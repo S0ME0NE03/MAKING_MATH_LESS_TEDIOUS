@@ -39,7 +39,7 @@ def prime_scive(to_go_to: int) -> list[int]:
             pass
         f.close()
 
-    f = open("primes.txt", "a")
+    f = open(path + "primes.txt", "a")
     #stores time of boot for automatic time based breaking
     start_time = time.time()
     countdown = [1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0]
