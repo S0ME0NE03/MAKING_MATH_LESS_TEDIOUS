@@ -3,7 +3,7 @@ import time
 import urllib.request
 import os
 path = os.path.abspath("prime_factor.py")
-print(path)
+
 def download(url, filename):
   urllib.request.urlretrieve(url, filename)
 def prime_scive(to_go_to: int) -> list[int]:
@@ -116,6 +116,7 @@ def is_this_prime(primes,  number):
    else:
       return False
 def main():
+  print(path)
   print("Booting...\nCalculating Pimes\n\n")
   print("__________________")
   print("\                 \ ")
