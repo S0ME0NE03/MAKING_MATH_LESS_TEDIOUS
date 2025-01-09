@@ -46,6 +46,9 @@ class Calculator:
     
     def update_add_ons_modules_if_req_met(self, folder_name) -> None:
         # if file_name.endswith('.py'):
+        if file_name == "__pycache__":
+            return
+
         module_name = folder_name  # Strip the .py extension
         try:
             module = importlib.import_module(f"{module_name}/main.py")
@@ -56,11 +59,8 @@ class Calculator:
                 self.program_logging.error_log(f"Module \"{module_name}\" does not have a \"main\" function so it cannot be run by the launcher")
         except ImportError as e:
             self.program_logging.error_log(f"Error importing {module_name}: {e}")
-    else:
-        if file_name == "__pycache__":
-            return
-        else:
-            self.program_logging.error_log(f"File \"{file_name}\" is not a python file so it cannot be imported")
+
+
 
     def welcome_message(self):
         print("\n----!Weclome to the Calculator!----")
