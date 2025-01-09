@@ -42,6 +42,7 @@ class Calculator:
             self.file_manager.create_folder(folder_name="add_ons", folder_path = self.MAIN_PROGRAM_PATH)
             
         for folder_name in os.listdir(self.ADD_ONS_PATH):
+            folder_path = os.path.join(self.ADD_ONS_PATH, "main.py")
             self.update_add_ons_modules_if_req_met(folder_name)
     
     def update_add_ons_modules_if_req_met(self, folder_name) -> None:
@@ -51,7 +52,7 @@ class Calculator:
 
         module_name = folder_name  # Strip the .py extension
         try:
-            module = importlib.import_module(f"{module_name}/main.py")
+            module = importlib.import_module(module_name)
             if hasattr(module, 'main'):
                 self.add_ons_modules.append(module)
                 self.add_ons_filename_list.append(module_name)
