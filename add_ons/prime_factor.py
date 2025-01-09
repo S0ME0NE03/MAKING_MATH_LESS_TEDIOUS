@@ -132,7 +132,8 @@ def main():
   #print(primes)
   while 1:
      inp = input("What would you like to do?(prime factor, unfactor, check if prime, or EXIT)\n")
-     if inp == "EXIT":
+     inp = inp.lower()
+     if inp == "exit":
           break
      elif inp == "factor" or inp == "prime factor":
           
