@@ -1,8 +1,8 @@
 PRIME_TO_CALC = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 import time
 import urllib.request
-import os
-path = os.path.abspath("prime_factor.py")
+import glob.glob
+path = glob.glob("/**/add_ons/prime_factor")
 
 def download(url, filename):
   urllib.request.urlretrieve(url, filename)
