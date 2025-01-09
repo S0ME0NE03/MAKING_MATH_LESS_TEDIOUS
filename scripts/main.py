@@ -42,7 +42,7 @@ class Calculator:
             self.file_manager.create_folder(folder_name="add_ons", folder_path = self.MAIN_PROGRAM_PATH)
             
         for folder_name in os.listdir(self.ADD_ONS_PATH):
-            folder_path = os.path.join(self.ADD_ONS_PATH, "main.py")
+            folder_path = os.path.join(self.ADD_ONS_PATH + folder_name, "main.py")
             self.update_add_ons_modules_if_req_met(folder_name)
     
     def update_add_ons_modules_if_req_met(self, folder_name) -> None:
