@@ -76,8 +76,8 @@ class FileManager:
             # Delete the root folder itself
             os.rmdir(folder_path)
             self.calculator.program_logging.multi_purpose_log(f"Deleted folder '{folder_path}'.")
-        except Exception as e:
-            print(f"Error deleting folder '{folder_path}': {e}")
+        except Exception as error:
+            print(f"Error deleting folder '{folder_path}': {error}")
 
     def fetch_files_in_path(self, path: str) -> list[str]:
         try:
