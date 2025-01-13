@@ -4,28 +4,7 @@ import urllib.request
 import pathlib
 
 path = pathlib.Path(__file__).parent.resolve()
-## load setings ##
-sucesfull_load = not(True) #yet
-try:
-  config = open(path + "config.txt", "r")
-  config.readline
-  MAX_TIME = int(config.readline)
-  config.close
-  sucesfull_load = True
-except FileNotFoundError:
-  print("file not found")
-except SyntaxError:
-  print("there was a syntax error in the settings loading process, please report this to SOMEONE03 and i will fix this promptly")
-except Exception as e:
-  print(f"{type(e).__name__} at line {e.__traceback__.tb_lineno} of {__file__}: {e}")
 
-
-if sucesfull_load == False:
-      print("setings not defined loading default settings")
-      MAX_TIME = 5
-
-
-## end load setings ##
 def download(url, filename):
   urllib.request.urlretrieve(url, filename)
 def prime_scive(to_go_to: int) -> list[int]:
@@ -138,6 +117,29 @@ def is_this_prime(primes,  number):
    else:
       return False
 def main():
+  ## load setings ##
+
+  sucesfull_load = not(True) #yet
+  try:
+    config = open(path + "config.txt", "r")
+    config.readline
+    MAX_TIME = int(config.readline)
+    config.close
+    sucesfull_load = True
+  except FileNotFoundError:
+    print("file not found")
+  except SyntaxError:
+    print("there was a syntax error in the settings loading process, please report this to SOMEONE03 and i will fix this promptly")
+  except Exception as e:
+    print(f"{type(e).__name__} at line {e.__traceback__.tb_lineno} of {__file__}: {e}")
+  
+  
+  if sucesfull_load == False:
+        print("setings not defined loading default settings")
+        MAX_TIME = 5
+
+
+  ## end load setings ##
   print(path)
   print("Booting...\nCalculating Pimes\n\n")
   print("__________________")
