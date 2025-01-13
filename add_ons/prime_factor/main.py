@@ -130,8 +130,8 @@ def main():
     print("file not found")
   except SyntaxError:
     print("there was a syntax error in the settings loading process, please report this to SOMEONE03 and i will fix this promptly")
-  except Exception as e:
-    print(f"{type(e).__name__} at line {e.__traceback__.tb_lineno} of {__file__}: {e}")
+  except Exception as error:
+    print(f"{type(e).__name__} at line {e.__traceback__.tb_lineno} of {__file__}: {error}")
   
   
   if sucesfull_load == False:
