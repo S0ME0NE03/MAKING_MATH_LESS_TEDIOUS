@@ -19,8 +19,6 @@ except Exception as e:
 if MAX_TIME == None:
   print("setings not defined loading default settings")
   MAX_TIME = 5
-
-
 ## end load setings ##
 def download(url, filename):
   urllib.request.urlretrieve(url, filename)
