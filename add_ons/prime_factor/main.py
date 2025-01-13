@@ -131,7 +131,7 @@ def main():
   except SyntaxError:
     print("there was a syntax error in the settings loading process, please report this to SOMEONE03 and i will fix this promptly")
   except Exception as error:
-    print(f"{type(e).__name__} at line {e.__traceback__.tb_lineno} of {__file__}: {error}")
+    print(f"{type(error).__name__} at line {error.__traceback__.tb_lineno} of {__file__}: {error}")
   
   
   if sucesfull_load == False:
