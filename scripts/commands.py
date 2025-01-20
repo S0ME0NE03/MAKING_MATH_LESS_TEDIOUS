@@ -76,11 +76,11 @@ class Commands:
 
     def handle_command(self, command):
         command_parts = command.split() #Used for multi worded commands such as "Download example.txt"
-       
+        list_of_comands_with_greater_that_two_words = ["log"]
        
         if len(command_parts) != 0:
            base_command = command_parts[0] #The base command. Using last example, it would be "Download"
-           if  command_parts[0] == "log":
+           if  command_parts[0] in list_of_comands_with_greater_that_two_words:
             pass
            elif len(command_parts) > 2: #Something like this may change later, but I doubt it
             print("The command may only be 2 key words long")
