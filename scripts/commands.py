@@ -39,23 +39,24 @@ class Commands:
             "del": "Deletes an add on (Extensions: add_on_name)",
             "log": "Manually logs a message",
             "add_ons": "Displays all installed add ons",
-            "view": "Lets you view things. (Extensions: logs, add_ons, server_add_ons)"
+            "view": "Lets you view things. (Extensions: logs, add_ons, server_add_ons)",
+            "debug": "Enters debug mode."
         }
     
-    def get_python_files_from_github_add_ons_server(self) -> list[dict]:
+    def fetch_add_on_names_from_git_hub_add_ons_folder(self) -> list[dict]:
         "Return a list of json as dictionaries withing in add_ons server folder"
         try:
             response = requests.get(self.calculator.api_url)
             response.raise_for_status()
 
-            file_in_server_add_ons_folder : list[dict] = response.json()
+            add_ons_in_server_add_ons_folder : list[dict] = response.json()
 
-            python_files : list[dict] = []
-            for file in file_in_server_add_ons_folder:
-                if file["type"] == "folder":
-                    python_files.append(file)
+            add_ons: list[dict] = []
+            for add_on in add_ons_in_server_add_ons_folder:
+                if add_on["type"] == "dir" and (add_on["name"] not in self.calculator.system_ignore):
+                    add_ons.append(add_on)
 
-            return python_files
+            return add_ons
 
         except Exception as error:
             print(f"An error occured while trying to get files from the server: {error}")
@@ -76,24 +77,13 @@ class Commands:
 
     def handle_command(self, command):
         command_parts = command.split() #Used for multi worded commands such as "Download example.txt"
-        list_of_comands_with_greater_that_two_words = ["log"]
-       
-        if len(command_parts) != 0:
-           base_command = command_parts[0] #The base command. Using last example, it would be "Download"
-           if  command_parts[0] in list_of_comands_with_greater_that_two_words:
-            pass
-           elif len(command_parts) > 2: #Something like this may change later, but I doubt it
-            print("The command may only be 2 key words long")
-            return
-        else:
-           base_command = ' '
-        
+        base_command = command_parts[0]
 
         if base_command in self.core_commands_dict:
             #This is some extremely funky syntax, but it just calls the function of the command
             self.core_commands_dict[base_command](command_parts)
         
-        elif base_command in self.add_ons_command_dict:
+        elif command in self.add_ons_command_dict:
             self.add_ons_command_dict[command].main()
         
         else:
@@ -153,6 +143,40 @@ class Commands:
             return
     
     def update(self, command_parts):
+        def download_file(url, local_path):
+            file = requests.get(url).json()
+            file_content = requests.get(file["download_url"]).content
+
+            with open(local_path, 'wb') as f:
+                f.write(file_content)
+            print(f"Downloaded file: {local_path}")
+            
+        def download_folder(folder_url, local_folder):
+            # Make sure the local folder exists
+            if not os.path.exists(local_folder):
+                os.makedirs(local_folder)
+
+            # Fetch folder contents (assuming the response is a JSON containing 'files' and 'folders')
+            response = requests.get(folder_url)
+            response.raise_for_status()  # Check for successful request
+            folder_data = response.json()
+
+            # Download each file in this folder
+            for file_info in folder_data:
+                if file_info['type'] == 'file':
+                    file_url = file_info['url']
+                    file_name = file_info['name']
+                    file_path = os.path.join(local_folder, file_name)
+                    download_file(file_url, file_path)
+
+            # Recurse into each subfolder
+            for subfolder_info in folder_data:
+                if subfolder_info['type'] == 'dir':
+                    subfolder_name = subfolder_info['name']
+                    subfolder_url = subfolder_info['url']
+                    subfolder_path = os.path.join(local_folder, subfolder_name)
+                    download_folder(subfolder_url, subfolder_path)  # Recurse into subfolder
+
         if not self.command_has_extension(command_parts):
             print(f"{command_parts[0]} requires an extension to run")
             return
@@ -163,11 +187,11 @@ class Commands:
             return
 
         try:
-            files : list[dict] = self.get_python_files_from_github_add_ons_server()
-            for file in files:
-                if add_on_name == file["name"][:-3]:
-                    file_content = requests.get(file["download_url"]).content
-                    self.calculator.file_manager.update_file(self.calculator.ADD_ONS_PATH, f"{add_on_name}.py", file_content, "wb")
+            add_ons : list[dict] = self.fetch_add_on_names_from_git_hub_add_ons_folder()
+            for add_on in add_ons:
+                if add_on_name == add_on["name"]:
+                    add_on_path = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name)
+                    download_folder(add_on["url"], add_on_path)
 
                     for module in self.calculator.add_ons_modules:
                         if module.__name__ == add_on_name:
@@ -188,11 +212,48 @@ class Commands:
         #like calculator file_manager and whatever
 
     def download_from_github(self, command_parts):
+        
+        #EXTREMEMLY CLUNKY I KNOW, BUT ANYTHING TO GET THE JOB DONE FOR NOW
+        def download_folder(folder_url, local_folder):
+            # Make sure the local folder exists
+            if not os.path.exists(local_folder):
+                os.makedirs(local_folder)
+
+            # Fetch folder contents (assuming the response is a JSON containing 'files' and 'folders')
+            response = requests.get(folder_url)
+            response.raise_for_status()  # Check for successful request
+            folder_data = response.json()
+
+            # Download each file in this folder
+            for file_info in folder_data:
+                if file_info['type'] == 'file':
+                    file_url = file_info['url']
+                    file_name = file_info['name']
+                    file_path = os.path.join(local_folder, file_name)
+                    download_file(file_url, file_path)
+
+            # Recurse into each subfolder
+            for subfolder_info in folder_data:
+                if subfolder_info['type'] == 'dir':
+                    subfolder_name = subfolder_info['name']
+                    subfolder_url = subfolder_info['url']
+                    subfolder_path = os.path.join(local_folder, subfolder_name)
+                    download_folder(subfolder_url, subfolder_path)  # Recurse into subfolder
+                
+        def download_file(url, local_path):
+            file = requests.get(url).json()
+            file_content = requests.get(file["download_url"]).content
+
+            with open(local_path, 'wb') as f:
+                f.write(file_content)
+            print(f"Downloaded file: {local_path}")
+
         if not self.command_has_extension(command_parts):
             print(f"{command_parts[0]} requires an extension to run")
             return
         
-        add_on_name = command_parts[1]
+        add_on_name = " ".join(command_parts[1:]) # DO NOT REMOVE THE SPACE IN THE STRING HERE
+
         if add_on_name in self.calculator.add_ons_foldername_list:
             print(f"Add on \"{add_on_name}\" is already installed")
             confrim = input("\nWould you like to update it? (y/n): ")
@@ -203,17 +264,13 @@ class Commands:
             return
         
         try:
-            files : list[dict] = self.get_python_files_from_github_add_ons_server()
-            for file in files:
-                if add_on_name == file["name"][:-3]:
-                    file_content = requests.get(file["download_url"]).content
+            add_ons : list[dict] = self.fetch_add_on_names_from_git_hub_add_ons_folder()
+            for add_on in add_ons:
+                if add_on["name"] == add_on_name:
+                    add_on_path = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name)
+                    download_folder(add_on["url"], add_on_path)
 
-                    add_on_in_correct_dir = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name + ".py")
-                    with open(add_on_in_correct_dir, "wb") as writer:
-                        writer.write(file_content)
-                        self.calculator.program_logging.file_created_log(add_on_name, self.calculator.ADD_ONS_PATH)
-
-                    self.calculator.update_add_ons_modules_if_req_met(add_on_name + ".py")
+                    self.calculator.update_add_ons_modules_if_req_met(add_on_name)
                     self.update_add_ons_command_dict_if_req(add_on_name, self.calculator.add_ons_modules[-1])
 
                     print(f"Add on \"{add_on_name}\" successfully downloaded!")
@@ -238,7 +295,7 @@ class Commands:
         
         confirm = input(f"Are you sure you want to delete the add on \"{add_on_name}\"? (y/n): ")
         if confirm == "y":
-            add_on_path = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name + ".py")
+            add_on_path = os.path.join(self.calculator.ADD_ONS_PATH, add_on_name)
             os.remove(add_on_path)
             self.calculator.add_ons_foldername_list.remove(add_on_name)
             self.calculator.add_ons_modules = [module for module in self.calculator.add_ons_modules if module.__name__ != add_on_name]
@@ -296,23 +353,25 @@ class Commands:
                     print(f"-{add_on}")
         
         elif command_extention == "server_add_ons":
-            files : list[dict] = self.get_python_files_from_github_add_ons_server()
+            files : list[dict] = self.fetch_add_on_names_from_git_hub_add_ons_folder()
 
             print("\nHeres a list of available add ons:")
             for file in files:
-                print(f"-{file['name'][:-3]}")
+                print(f"-{file["name"]}")
         
         else:
             self.command_extension_invalid(command_parts)
             return
 
     def debug(self, command_parts):
-        if not self.command_has_extension(command_parts):
-            print(f"{command_parts[0]} requires an extension to run")
+        if self.command_has_extension(command_parts):
+            print(f"{command_parts[0]} does not require an extension to run")
             return
-        
+
+        print("--Entered debug mode--")
         try:
-            eval(command_parts[1])
+            command = input("Enter a debug command: ")
+            eval(command)
         except Exception as error:
             print(f"An error occured while trying to debug: {error}")
             self.calculator.program_logging.error_log(str(error))

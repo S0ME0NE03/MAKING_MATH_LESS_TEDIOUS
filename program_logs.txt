@@ -1,0 +1,335 @@
+2025-01-29 18:40:47.549101: !MULTI-PURPOUSE LOG!: -> fa
+2025-01-29 18:52:55.458778: !BOOT!: -> The aplication was run
+2025-01-29 18:52:55.459258: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:52:55.460166: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 18:52:55.460838: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:52:55.461523: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:52:55.461826: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:52:55.462220: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:54:50.093519: !BOOT!: -> The aplication was run
+2025-01-29 18:54:50.094031: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:54:50.094893: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 18:54:50.095572: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:54:50.096228: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:54:50.096529: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:54:50.096823: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:56:52.480147: !BOOT!: -> The aplication was run
+2025-01-29 18:56:52.480641: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:56:52.481571: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 18:56:52.482257: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:56:52.482970: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:56:52.483329: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:56:52.483637: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:57:17.172856: !BOOT!: -> The aplication was run
+2025-01-29 18:57:17.173358: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:57:17.174228: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 18:57:17.174898: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:57:17.175577: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:57:17.175900: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:57:17.176203: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:13.097110: !BOOT!: -> The aplication was run
+2025-01-29 18:59:13.097621: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:13.098433: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 18:59:13.099068: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:13.099714: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:13.100019: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:13.100332: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:48.787339: !BOOT!: -> The aplication was run
+2025-01-29 18:59:48.787838: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:48.788713: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 18:59:48.789445: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:48.790101: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:48.790407: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:48.790707: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 18:59:50.902251: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:01:02.131674: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:01:05.433028: !BOOT!: -> The aplication was run
+2025-01-29 19:01:05.433542: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:01:05.434375: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:01:05.435036: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:01:05.435663: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:01:05.435963: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:01:05.436270: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:01:07.254285: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:02:01.866049: !BOOT!: -> The aplication was run
+2025-01-29 19:02:01.866549: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:02:01.867338: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:02:01.868076: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:02:01.868727: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:02:01.869035: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:02:01.869332: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:02:04.771775: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:03:42.018131: !BOOT!: -> The aplication was run
+2025-01-29 19:03:42.018617: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:03:42.019417: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:03:42.020060: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:03:42.020724: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:03:42.021025: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:03:42.021321: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:03:46.121184: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:04:32.527037: !BOOT!: -> The aplication was run
+2025-01-29 19:04:32.527545: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:04:32.528669: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:04:32.529367: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:04:32.530022: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:04:32.530331: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:04:32.530632: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:04:34.697593: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:05:21.471053: !BOOT!: -> The aplication was run
+2025-01-29 19:05:21.471549: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:21.472508: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:05:21.473226: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:21.473873: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:21.474177: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:21.474480: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:23.210512: !ERROR!: -> list index out of range
+2025-01-29 19:05:34.804010: !BOOT!: -> The aplication was run
+2025-01-29 19:05:34.804515: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:34.805376: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:05:34.806019: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:34.806830: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:34.807134: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:34.807435: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:50.652938: !BOOT!: -> The aplication was run
+2025-01-29 19:05:50.653448: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:50.654326: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:05:50.654975: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:50.655593: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:50.655893: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:05:50.656205: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:06:07.081765: !BOOT!: -> The aplication was run
+2025-01-29 19:06:07.082292: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:06:07.083178: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:06:07.083860: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:06:07.084504: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:06:07.084807: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:06:07.085119: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:06:08.795319: !ERROR!: -> list index out of range
+2025-01-29 19:07:10.047998: !BOOT!: -> The aplication was run
+2025-01-29 19:07:10.048484: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:10.049308: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:07:10.049958: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:10.050643: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:10.051093: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:10.051461: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:11.732016: !ERROR!: -> list index out of range
+2025-01-29 19:07:50.715403: !BOOT!: -> The aplication was run
+2025-01-29 19:07:50.715913: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:50.716752: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:07:50.717419: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:50.718076: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:50.718396: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:50.718700: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:07:52.414065: !ERROR!: -> list index out of range
+2025-01-29 19:08:05.864565: !BOOT!: -> The aplication was run
+2025-01-29 19:08:05.865059: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:08:05.865936: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:08:05.866611: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:08:05.867268: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:08:05.867592: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:08:05.867895: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:08:07.375292: !ERROR!: -> list index out of range
+2025-01-29 19:14:19.638806: !BOOT!: -> The aplication was run
+2025-01-29 19:14:19.639328: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:14:19.640320: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:14:19.640987: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:14:19.641640: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:14:19.641943: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:14:19.642244: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:39.550972: !BOOT!: -> The aplication was run
+2025-01-29 19:15:39.551463: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:39.552394: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:15:39.553080: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:39.553750: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:39.554052: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:39.554354: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:55.846379: !BOOT!: -> The aplication was run
+2025-01-29 19:15:55.846874: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:55.847721: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:15:55.848376: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:55.849018: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:55.849318: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:15:55.849728: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:16:18.396338: !BOOT!: -> The aplication was run
+2025-01-29 19:16:18.396837: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:16:18.400867: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:16:18.401535: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:16:18.402165: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:16:18.402465: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:16:18.402761: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:31:14.637801: !BOOT!: -> The aplication was run
+2025-01-29 19:31:14.638320: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:31:14.639180: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:31:14.639890: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:31:14.640583: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:31:14.640902: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:31:14.641224: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:32:05.166699: !BOOT!: -> The aplication was run
+2025-01-29 19:32:05.167242: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:32:05.168061: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:32:05.168748: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:32:05.169411: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:32:05.169745: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:32:05.170045: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:34:58.359968: !BOOT!: -> The aplication was run
+2025-01-29 19:34:58.360495: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:34:58.361316: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:34:58.361973: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:34:58.362618: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:34:58.362928: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:34:58.363224: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:35:52.902530: !BOOT!: -> The aplication was run
+2025-01-29 19:35:52.903023: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:35:52.903864: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:35:52.904500: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:35:52.905133: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:35:52.905449: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:35:52.905752: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:38:42.546824: !BOOT!: -> The aplication was run
+2025-01-29 19:38:42.547325: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:38:42.548130: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:38:42.548790: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:38:42.549436: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:38:42.549745: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:38:42.550043: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:40:24.900978: !BOOT!: -> The aplication was run
+2025-01-29 19:40:24.901455: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:40:24.902252: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:40:24.902870: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:40:24.903507: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:40:24.903833: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:40:24.904138: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:41:20.652753: !BOOT!: -> The aplication was run
+2025-01-29 19:41:20.653242: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:41:20.654077: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:41:20.654726: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:41:20.655366: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:41:20.655664: !ERROR!: -> Module "prime_factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:41:20.655968: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:41:20.656281: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:41:33.840992: !ERROR!: -> [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Dennis\\Documents\\ACP\\Python\\MAKING_MATH_LESS_TEDIOUS-development\\add_ons\\prime factor'
+2025-01-29 19:43:07.101433: !BOOT!: -> The aplication was run
+2025-01-29 19:43:07.101931: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:43:07.102776: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:43:07.103405: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:43:07.104026: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:43:07.105185: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:43:07.105499: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:43:12.292552: !ERROR!: -> [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Dennis\\Documents\\ACP\\Python\\MAKING_MATH_LESS_TEDIOUS-development\\add_ons\\prime factor'
+2025-01-29 19:43:43.187295: !ERROR!: -> name 'calculator' is not defined
+2025-01-29 19:44:55.665714: !BOOT!: -> The aplication was run
+2025-01-29 19:44:55.666246: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:44:55.667180: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:44:55.667910: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:44:55.669408: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:44:55.669722: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:45:07.975274: !ERROR!: -> [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Dennis\\Documents\\ACP\\Python\\MAKING_MATH_LESS_TEDIOUS-development\\add_ons\\testtest'
+2025-01-29 19:45:53.946416: !BOOT!: -> The aplication was run
+2025-01-29 19:45:53.946891: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:45:53.947768: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:45:53.948440: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:45:53.949100: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:45:53.949397: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:53:55.849600: !BOOT!: -> The aplication was run
+2025-01-29 19:53:55.850109: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:53:55.851006: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:53:55.851696: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:53:55.852384: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:53:55.852712: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:54:34.196085: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:56:31.028132: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:56:32.673760: !BOOT!: -> The aplication was run
+2025-01-29 19:56:32.674266: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:56:32.675120: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:56:32.675783: !ERROR!: -> Module "gfc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:56:32.676100: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:56:32.676740: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:56:32.677057: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:57:41.629735: !BOOT!: -> The aplication was run
+2025-01-29 19:57:41.630228: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:57:41.631073: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:57:41.631724: !ERROR!: -> Module "gfc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:57:41.632052: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:57:41.632704: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:57:41.633007: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:57:43.634561: !ERROR!: -> _path_exists() missing required argument 'path' (pos 1)
+2025-01-29 19:58:01.436721: !BOOT!: -> The aplication was run
+2025-01-29 19:58:01.437226: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:01.438230: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:58:01.438977: !ERROR!: -> Module "gfc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:01.439296: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:01.439930: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:01.440242: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:02.756270: !ERROR!: -> list indices must be integers or slices, not str
+2025-01-29 19:58:42.481491: !BOOT!: -> The aplication was run
+2025-01-29 19:58:42.481972: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:42.482830: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 19:58:42.483476: !ERROR!: -> Module "gfc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:42.483797: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:42.484457: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:42.484763: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:58:42.485062: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 19:59:17.710741: !ERROR!: -> 'list' object has no attribute 'get'
+2025-01-29 20:09:19.305461: !BOOT!: -> The aplication was run
+2025-01-29 20:09:19.305957: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:09:19.306826: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:09:19.307516: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:09:19.308201: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:09:19.308511: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:09:19.308834: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:10:26.601338: !ERROR!: -> 'list' object has no attribute 'get'
+2025-01-29 20:11:21.464144: !BOOT!: -> The aplication was run
+2025-01-29 20:11:21.464646: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:11:21.465623: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:11:21.466288: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:11:21.466943: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:11:21.467266: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:11:21.467573: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:11:25.010981: !ERROR!: -> Module "gfc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:16:56.191803: !BOOT!: -> The aplication was run
+2025-01-29 20:16:56.192320: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:16:56.193188: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:16:56.193858: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:16:56.194507: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:16:56.194813: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:16:56.195111: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:16:58.743788: !ERROR!: -> a bytes-like object is required, not 'str'
+2025-01-29 20:18:12.987495: !BOOT!: -> The aplication was run
+2025-01-29 20:18:12.988157: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:18:12.989139: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:18:12.989835: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:18:12.990501: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:18:12.990836: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:18:12.991148: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:18:15.578860: !ERROR!: -> 'str' object has no attribute 'content'
+2025-01-29 20:19:23.584306: !BOOT!: -> The aplication was run
+2025-01-29 20:19:23.584853: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:19:23.585788: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:19:23.586474: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:19:23.587154: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:19:23.587564: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:19:23.587895: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:19:25.865456: !ERROR!: -> string indices must be integers, not 'str'
+2025-01-29 20:20:37.083731: !BOOT!: -> The aplication was run
+2025-01-29 20:20:37.084340: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:20:37.085264: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:20:37.085939: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:20:37.086618: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:20:37.086975: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:20:37.087309: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:21:06.027728: !BOOT!: -> The aplication was run
+2025-01-29 20:21:06.028222: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:21:06.029078: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:21:06.029741: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:21:06.030425: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:21:06.030747: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:21:06.031054: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:22:18.340004: !ERROR!: -> 'Calculator' object has no attribute 'add_ons'
+2025-01-29 20:26:34.726875: !BOOT!: -> The aplication was run
+2025-01-29 20:26:34.727395: !ERROR!: -> Module "children_in_basement_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:26:34.728230: !ERROR!: -> Error importing gcf.py: No module named 'gcf.py'; 'gcf' is not a package
+2025-01-29 20:26:34.729171: !ERROR!: -> Module "golden_ratio_calc" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:26:34.729794: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:26:34.730098: !ERROR!: -> Module "temp_converter" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:26:34.730407: !ERROR!: -> Module "testtest" does not have a "main" function so it cannot be run by the launcher
+2025-01-29 20:27:01.851090: !ERROR!: -> Module "prime factor" does not have a "main" function so it cannot be run by the launcher

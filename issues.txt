@@ -1,0 +1,2 @@
+current known issues in the program:
+    1. If an add on is downloaded, and the user does not have a required library installed, the program will crash

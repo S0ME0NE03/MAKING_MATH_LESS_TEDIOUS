@@ -2,7 +2,7 @@ import os
 
 class FileManager:
     def __init__(self, calculator):
-        self.calculator = calculator
+        self.calculator: object = calculator
 
     def file_exists(self, file_path: str) -> bool:
         return os.path.isfile(file_path)

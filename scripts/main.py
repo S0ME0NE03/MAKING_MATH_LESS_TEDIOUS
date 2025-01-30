@@ -24,11 +24,13 @@ class Calculator:
         self.GITHUB_ADD_ONS_URL : str = "https://github.com/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/tree/main/add_ons"
         self.api_url : str = "https://api.github.com/repos/S0ME0NE03/MAKING_MATH_LESS_TEDIOUS/contents/add_ons"
 
-        self.repo_owner = "S0ME0NE03"  # Replace with the repository owner
-        self.repo_name = "MAKING_MATH_LESS_TEDIOUS"  # Replace with your repository name
+        self.repo_owner: str = "S0ME0NE03"  # Replace with the repository owner
+        self.repo_name: str = "MAKING_MATH_LESS_TEDIOUS"  # Replace with your repository name
 
         self.program_running : bool = True
-        self.command = None
+        self.command: str = None
+
+        self.system_ignore: list[str] = ["__pycache__", "README.txt"]
 
     def set_up_add_ons(self):
         self.ADD_ONS_PATH : str = os.path.join(self.MAIN_PROGRAM_PATH, "add_ons")
@@ -42,26 +44,22 @@ class Calculator:
             self.file_manager.create_folder(folder_name="add_ons", folder_path = self.MAIN_PROGRAM_PATH)
             
         for folder_name in os.listdir(self.ADD_ONS_PATH):
-            folder_path = os.path.join(self.ADD_ONS_PATH + folder_name, "main.py")
             self.update_add_ons_modules_if_req_met(folder_name)
-    
+        
     def update_add_ons_modules_if_req_met(self, folder_name) -> None:
-        # if file_name.endswith('.py'):
-        if folder_name == "__pycache__":
+        if folder_name in self.system_ignore:
             return
 
-        module_name = folder_name  # Strip the .py extension
+        module_name = folder_name
         try:
             module = importlib.import_module(module_name)
             if hasattr(module, 'main'):
                 self.add_ons_modules.append(module)
-                self.add_ons_filename_list.append(module_name)
+                self.add_ons_foldername_list.append(module_name)
             else:
                 self.program_logging.error_log(f"Module \"{module_name}\" does not have a \"main\" function so it cannot be run by the launcher")
         except ImportError as e:
             self.program_logging.error_log(f"Error importing {module_name}: {e}")
-
-
 
     def welcome_message(self):
         print("\n----!Weclome to the Calculator!----")
