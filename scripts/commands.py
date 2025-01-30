@@ -176,6 +176,7 @@ class Commands:
                     subfolder_url = subfolder_info['url']
                     subfolder_path = os.path.join(local_folder, subfolder_name)
                     download_folder(subfolder_url, subfolder_path)  # Recurse into subfolder
+                    
         if not self.command_has_extension(command_parts):
             print(f"{command_parts[0]} requires an extension to run")
             return
