@@ -2,8 +2,6 @@ import os
 import requests
 import importlib
 
-#Some problems with the updateing function
-
 class Commands:
     def __init__(self, calculator):
         self.calculator = calculator
