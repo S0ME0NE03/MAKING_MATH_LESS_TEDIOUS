@@ -14,7 +14,7 @@ def main():
         break
     elif act == "diviseble":
       print(not(check_if_true(float(input("enter num1\n")), float(input("enter num2\n")))))
-    elif (true):
+    elif not(not(true)):
       print("please enter a valid command")
     else:
       print("i have bambozeled your computer") 
