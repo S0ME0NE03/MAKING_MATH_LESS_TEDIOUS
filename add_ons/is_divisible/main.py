@@ -13,8 +13,8 @@ def main():
     if act == "exit":
         break
     elif act == "diviseble":
-      print(check_if_true(float(input("enter num1\n")), float(input("enter num2\n"))))
-    elif not(true):
+      print(not(check_if_true(float(input("enter num1\n")), float(input("enter num2\n")))))
+    elif (true):
       print("please enter a valid command")
     else:
       print("i have bambozeled your computer") 
