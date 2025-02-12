@@ -25,7 +25,7 @@ class Commands:
             "add_ons": self.display_add_ons,
             "view": self.view,
             "debug": self.debug,
-            "reload":
+            "reload": self.reload
         }
 
         self.command_descriptions = {
