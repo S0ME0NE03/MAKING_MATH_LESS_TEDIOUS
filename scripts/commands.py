@@ -24,7 +24,8 @@ class Commands:
             "log": self.manual_user_log,
             "add_ons": self.display_add_ons,
             "view": self.view,
-            "debug": self.debug
+            "debug": self.debug,
+            "reload":
         }
 
         self.command_descriptions = {
@@ -373,3 +374,6 @@ class Commands:
         except Exception as error:
             print(f"An error occured while trying to debug: {error}")
             self.calculator.program_logging.error_log(str(error))
+
+    def reload(self):
+        importlib.reload(self.calculator.flaksdfjklj)
